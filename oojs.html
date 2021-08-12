@@ -19,7 +19,10 @@
 
   <script>
     const person = {
-      name: ["Bob", "Smith"],
+      name: {
+        First: "Bob",
+        Last: "Smith",
+      },
       age: 32,
       gender: "male",
       interests: function () {
@@ -28,20 +31,22 @@
       },
       bio: function () {
         alert(
-          this.name[0] +
+          this.name.first +
             " " +
-            this.name[1] +
+            this.name.last +
             " is " +
             this.age +
             " years old. He likes " +
             this.interests[0] +
             " and " +
             this.interests[1] +
-            "."
+            " " +
+            this.interests[2],
+          "."
         );
       },
       greeting: function () {
-        alert("Hi! I'm " + this.name[0] + " " + this.name[1] + ".");
+        alert("Hi! I'm " + this.name.first + " " + this.name.last + ".");
       },
     };
   </script>
